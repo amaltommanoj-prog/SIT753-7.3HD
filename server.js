@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('SIT753 DevOps Pipeline Running');
+    res.send('SIT753 DevOps Pipeline Running sucessfully');
 });
 
 const PORT = 3000;
