@@ -9,6 +9,7 @@ pipeline {
         IMAGE_NAME = "sit753-app"
     }
 
+    stages {
 
         stage('Build') {
             steps {
@@ -36,11 +37,11 @@ pipeline {
         }
 
         stage('Deploy') {
-    steps {
-        bat 'docker rm -f sit753-container || exit 0'
-        bat 'docker run -d -p 3000:3000 --name sit753-container %IMAGE_NAME%'
-    }
-}
+            steps {
+                bat 'docker rm -f sit753-container || exit 0'
+                bat 'docker run -d -p 3000:3000 --name sit753-container %IMAGE_NAME%'
+            }
+        }
 
         stage('Release') {
             steps {
