@@ -25,10 +25,15 @@ pipeline {
         }
 
         stage('Code Quality') {
-            steps {
-                echo 'SonarQube analysis stage'
+    steps {
+        script {
+            def scannerHome = tool 'SonarScanner'
+            withSonarQubeEnv('SonarQube') {
+                bat "${scannerHome}\\bin\\sonar-scanner.bat"
             }
         }
+    }
+}
 
         stage('Security Scan') {
             steps {
