@@ -12,10 +12,10 @@ pipeline {
     stages {
 
         stage('Checkout') {
-            steps {
-                git 'https://github.com/amaltommanoj-prog/SIT753-7.3HD'
-            }
-        }
+    steps {
+        git branch: 'main', url: 'https://github.com/amaltommanoj-prog/SIT753-7.3HD.git'
+    }
+}
 
         stage('Build') {
             steps {
