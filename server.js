@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('SIT753 DevOps Pipeline Running sucessfully CI/CD Testing');
+    res.send('SIT753 DevOps Pipeline Running sucessfully CI/CD for testing purpose');
 });
 
 const PORT = 3000;
